@@ -1,0 +1,32 @@
+.ai-answer {
+  white-space: pre-line;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container {
+  padding-top: 30px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.container form {
+  width: 100%;
+  text-align: center;
+}
+
+.container form input {
+  width: 100%;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 2rem;
+}

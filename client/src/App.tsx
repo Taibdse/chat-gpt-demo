@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import styles from './App.module.css'
 import axios from 'axios'
 
 const API_URL = 'http://localhost:3001/api'
@@ -15,7 +15,7 @@ function App() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    if (!message) return
+    if (!message || loading) return
     setLoading(true)
     try {
       const messages = [message]
@@ -29,12 +29,13 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Chat GPT Demo</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" value={message} onChange={handleChangeMessage} />
+        <input type="text" placeholder="Type here..." className="input input-bordered w-full" value={message} onChange={handleChangeMessage} />
       </form>
       {loading && <div>Loading...</div>}
-      <div className='ai-answer'>{content}</div>
+      {!loading && <div className={styles['ai-answer']}>{content}</div>}
     </div>
   )
 }
