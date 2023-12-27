@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Chat GPT Demo</h2>
+      <h2 className={styles.heading}>ChatGPT Demo</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Type here..." className="input input-bordered w-full" value={message} onChange={handleChangeMessage} />
+        <input type="text" placeholder="Message ChatGPT..." className="input input-bordered w-full" value={message} onChange={handleChangeMessage} />
       </form>
       {loading && <div>Loading...</div>}
       {!loading && <div className={styles['ai-answer']}>{content}</div>}
